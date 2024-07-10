@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import classes from './login.module.css';
 
 const Login = () => {
   return (
-    <div className='text-3xl text-center mt10'  > Login page</div>
+    <div>
+    <h1 className='text-3xl text-center mt10' > Login page</h1>
+
+    <button className= {classes.loginBtn}>Login now</button>
+    
+    
+    </div>
   )
 }
 
