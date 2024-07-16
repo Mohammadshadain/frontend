@@ -97,8 +97,8 @@ const todo = () => {
                   onClick={() => {togglComplete(index);}}
                   
                   className="bg-blue-500 px-3 text-white rounded-full ">
-                    {" "}
-                    Edit{" "}
+                  
+                    Edit
                   </button>
 
                   <button
