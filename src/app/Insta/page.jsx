@@ -3,22 +3,14 @@ import React from 'react'
 const Insta = () => {
   return (
 
-
-
     <>
-  {/* Sidebar */}
-  <div
-    id="application-sidebar"
-    className="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full duration-300 transform hidden fixed top-0 start-0 bottom-0 z-[60] w-64 bg-white border-e border-gray-200 overflow-y-auto lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-900 dark:border-neutral-700"
-  >
-    <nav
-      className="hs-accordion-group size-full flex flex-col"
-      data-hs-accordion-always-open=""
-    >
-      <div className="flex items-center justify-between pt-4 pe-4 ps-7">
-        {/* Logo */}
+  {/* Content */}
+  <div className="relative h-screen">
+    <div className="py-10 lg:py-14">
+      {/* Title */}
+      <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
         <svg
-          className="w-28 h-auto"
+          className="w-28 h-auto mx-auto mb-4"
           width={116}
           height={32}
           viewBox="0 0 116 32"
@@ -49,174 +41,9 @@ const Insta = () => {
             fill="currentColor"
             className="fill-blue-600 dark:fill-white"
           />
-        </svg>
-        {/* End Logo */}
-      </div>
-      <div className="h-full">
-        {/* List */}
-        <ul className="space-y-1.5 p-4">
-          <li>
-            <a
-              className="flex items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-              href="#"
-            >
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="M12 5v14" />
-              </svg>
-              New chat
-            </a>
-          </li>
-          <li>
-            <a
-              className="flex items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-              href="#"
-            >
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width={16}
-                height={16}
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
-              </svg>
-              Preline AI Discord
-            </a>
-          </li>
-          <li>
-            <a
-              className="flex items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-              href="#"
-            >
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1={12} x2={12} y1={15} y2={3} />
-              </svg>
-              Save conversation
-            </a>
-          </li>
-          <li>
-            <a
-              className="flex items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-              href="#"
-            >
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m22 2-7 20-4-9-9-4Z" />
-                <path d="M22 2 11 13" />
-              </svg>
-              Updates &amp; FAQ
-            </a>
-          </li>
-          <li>
-            <a
-              className="flex items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-              href="#"
-            >
-              <svg
-                className="flex-shrink-0 size-4 text-blue-600"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
-              <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
-                Upgrade Plan
-              </span>
-            </a>
-          </li>
-        </ul>
-        {/* End List */}
-      </div>
-      {/* Footer */}
-      <div className="mt-auto">
-        <div className="py-2.5 px-7">
-          <p className="inline-flex items-center gap-x-2 text-xs text-green-600">
-            <span className="block size-1.5 rounded-full bg-green-600" />
-            Active 12,320 people
-          </p>
-        </div>
-        <div className="p-4 border-t border-gray-200 dark:border-neutral-700">
-          <a
-            className="flex justify-between items-center gap-x-3 py-2 px-3 text-sm text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
-            href="#"
-          >
-            Sign in
-            <svg
-              className="flex-shrink-0 size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-              <polyline points="10 17 15 12 10 7" />
-              <line x1={15} x2={3} y1={12} y2={12} />
-            </svg>
-          </a>
-        </div>
-      </div>
-      {/* End Footer */}
-    </nav>
-  </div>
-  {/* End Sidebar */}
-  {/* Content */}
-  <div className="relative h-screen w-full lg:ps-64">
-    <div className="py-10 lg:py-14">
-      {/* Title */}
-      <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
-        <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white">
-          Welcome to Preline AI
-        </h1>
-        <p className="mt-3 text-gray-600 dark:text-neutral-400">
-          Your AI-powered copilot for the web
+        </svg>      
+        <p className="mt-3 text-red-800  font-bold text-5xl ">
+          INSTAGRAM INBOX
         </p>
       </div>
       {/* End Title */}
@@ -477,7 +304,7 @@ const Insta = () => {
                 <div className="mt-3">
                   <button
                     type="button"
-                    className="p-2 inline-flex justify-center items-center gap-x-1 rounded-lg border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 text-xs dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                    className="p-2 inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                   >
                     <svg
                       className="flex-shrink-0 size-4"
@@ -2048,156 +1875,161 @@ const Insta = () => {
       </ul>
     </div>
     {/* Textarea */}
-    <footer className="max-w-4xl mx-auto sticky bottom-0 z-10 p-3 sm:py-6">
-      <div className="lg:hidden flex justify-end mb-2 sm:mb-3">
-        {/* Sidebar Toggle */}
-        <button
-          type="button"
-          className="p-2 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-          data-hs-overlay="#application-sidebar"
-          aria-controls="application-sidebar"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            className="flex-shrink-0 size-3.5"
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
+    <footer className="sticky bottom-0 z-10 bg-white border-t border-gray-200 pt-2 pb-3 sm:pt-4 sm:pb-6 dark:bg-neutral-900 dark:border-neutral-700">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center mb-3">
+          <button
+            type="button"
+            className="inline-flex justify-center items-center gap-x-2 rounded-lg font-medium text-gray-800 hover:text-blue-600 text-xs sm:text-sm dark:text-neutral-200 dark:hover:text-blue-500"
           >
-            <line x1={3} x2={21} y1={6} y2={6} />
-            <line x1={3} x2={21} y1={12} y2={12} />
-            <line x1={3} x2={21} y1={18} y2={18} />
-          </svg>
-          <span>Sidebar</span>
-        </button>
-        {/* End Sidebar Toggle */}
-      </div>
-      {/* Input */}
-      <div className="relative">
-        <textarea
-          className="p-4 pb-12 block w-full bg-gray-100 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          placeholder="Ask me anything..."
-          defaultValue={""}
-        />
-        {/* Toolbar */}
-        <div className="absolute bottom-px inset-x-px p-2 rounded-b-lg bg-gray-100 dark:bg-neutral-800">
-          <div className="flex justify-between items-center">
-            {/* Button Group */}
-            <div className="flex items-center">
-              {/* Mic Button */}
-              <button
-                type="button"
-                className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
-              >
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect width={18} height={18} x={3} y={3} rx={2} />
-                  <line x1={9} x2={15} y1={15} y2={9} />
-                </svg>
-              </button>
-              {/* End Mic Button */}
-              {/* Attach Button */}
-              <button
-                type="button"
-                className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
-              >
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
-                </svg>
-              </button>
-              {/* End Attach Button */}
-            </div>
-            {/* End Button Group */}
-            {/* Button Group */}
-            <div className="flex items-center gap-x-1">
-              {/* Mic Button */}
-              <button
-                type="button"
-                className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
-              >
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                  <line x1={12} x2={12} y1={19} y2={22} />
-                </svg>
-              </button>
-              {/* End Mic Button */}
-              {/* Send Button */}
-              <button
-                type="button"
-                className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-white bg-blue-600 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <svg
-                  className="flex-shrink-0 size-3.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
-                </svg>
-              </button>
-              {/* End Send Button */}
-            </div>
-            {/* End Button Group */}
-          </div>
+            <svg
+              className="flex-shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="M12 5v14" />
+            </svg>
+            New chat
+          </button>
+          <button
+            type="button"
+            className="py-1.5 px-2 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+          >
+            <svg
+              className="size-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width={16}
+              height={16}
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z" />
+            </svg>
+            Stop generating
+          </button>
         </div>
-        {/* End Toolbar */}
+        {/* Input */}
+        <div className="relative">
+          <textarea
+            className="p-4 pb-12 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            placeholder="Ask me anything..."
+            defaultValue={""}
+          />
+          {/* Toolbar */}
+          <div className="absolute bottom-px inset-x-px p-2 rounded-b-lg bg-white dark:bg-neutral-900">
+            <div className="flex justify-between items-center">
+              {/* Button Group */}
+              <div className="flex items-center">
+                {/* Mic Button */}
+                <button
+                  type="button"
+                  className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
+                >
+                  <svg
+                    className="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect width={18} height={18} x={3} y={3} rx={2} />
+                    <line x1={9} x2={15} y1={15} y2={9} />
+                  </svg>
+                </button>
+                {/* End Mic Button */}
+                {/* Attach Button */}
+                <button
+                  type="button"
+                  className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
+                >
+                  <svg
+                    className="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                  </svg>
+                </button>
+                {/* End Attach Button */}
+              </div>
+              {/* End Button Group */}
+              {/* Button Group */}
+              <div className="flex items-center gap-x-1">
+                {/* Mic Button */}
+                <button
+                  type="button"
+                  className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:text-blue-500"
+                >
+                  <svg
+                    className="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                    <line x1={12} x2={12} y1={19} y2={22} />
+                  </svg>
+                </button>
+                {/* End Mic Button */}
+                {/* Send Button */}
+                <button
+                  type="button"
+                  className="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-white bg-blue-600 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <svg
+                    className="flex-shrink-0 size-3.5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={16}
+                    height={16}
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+                  </svg>
+                </button>
+                {/* End Send Button */}
+              </div>
+              {/* End Button Group */}
+            </div>
+          </div>
+          {/* End Toolbar */}
+        </div>
+        {/* End Input */}
       </div>
-      {/* End Input */}
     </footer>
     {/* End Textarea */}
   </div>
   {/* End Content */}
 </>
 
-
-
-
-
-
-
-
-    
+   
   )
 }
 

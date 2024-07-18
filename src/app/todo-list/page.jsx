@@ -12,6 +12,7 @@ const todo = () => {
     // {text:'learn HTML',completed:false,  createdAt:new Date()},
     // {text:'learn CSS',completed:false,  createdAt:new Date()},
     // {text:'learn JS',completed:false,  createdAt:new Date()},
+    
   ]);
 
   const addTask = (e) => {

@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import classes from './login.module.css';
 import { useFormik } from 'formik';
 
 import * as Yup from 'yup';
@@ -10,7 +9,16 @@ import * as Yup from 'yup';
      .min(2, 'Make it longer')
      .max(50, 'Too Long!')
      .required('Name is Required'),
-   email: Yup.string().email('Invalid email').required('Required')
+   email: Yup.string().email('Invalid email').required('Required'),
+
+   password: Yup.string().required('Required')
+   .matches(/[a-z]/,'must include lowercase ')
+   .matches(/[A-Z]/,'must include uppercase ')
+   .matches(/[0-9]/,'must include numbers ')
+   .matches(/\w/,'must include special characters '),
+
+
+
  });
 
 const Login = () => {
@@ -197,21 +205,6 @@ const Login = () => {
                 Forgot password?
               </a>
 
-
-              {
-                  signupForm.touched.email &&(
-    
-                    <p className="text-xs text-red-600 mt-2" id="email-error">
-                 {signupForm.errors.email}
-                </p>
-    
-                  )
-                }
-
-
-
-
-
             </div>
             <div className="relative">
               <input
@@ -236,9 +229,12 @@ const Login = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-              8+ characters required
-            </p>
+            {signupForm.touched.password && (
+                <p className="text-xs text-red-600 mt-2" id="password-error">
+                {signupForm.errors.password}
+              </p>
+            )}
+            
           </div>
           <div>
             <div className="flex justify-between items-center">
@@ -261,15 +257,14 @@ const Login = () => {
               />
 
 
-{
-                  signupForm.touched.confirmPassword &&(
-    
+
+                 
                     <p className="text-xs text-red-600 mt-2" id="email-error">
-                 {signupForm.errors.confirmPassword}
+                
                 </p>
     
-                  )
-                }
+                  
+              
 
 
 
@@ -286,9 +281,16 @@ const Login = () => {
                 </svg>
               </div>
             </div>
+            {signupForm.touched.confirmPassword &&(
+    
             <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-              8+ characters required
+            {signupForm.errors.confirmPassword}
             </p>
+           
+            
+            )}
+             
+            
           </div>
           {/* End Form Group */}
           {/* Checkbox */}

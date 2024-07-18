@@ -1,11 +1,40 @@
+'use client'
+import { useFormik } from 'formik';
 import React from 'react'
+import * as Yup from 'yup';
+const SignupSchema=Yup.object().shape({
+  email:Yup.string().email('enter a valid email ').required('email is required'),
 
-const page = () => {
+})
+
+const Page = () => {
+
+  const signupForm=useFormik({
+
+    initialValues:{
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+    onSubmit:(values)=>{
+      console.log(values); // these values will be send to backend further.
+    },
+
+
+  }
+
+  )
+
+
   return (
 
 
+    
 
-    <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
+
+    <div className='flex justify-center items-center'>
+      
+    <div className="mt-0  w-[70vh] bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
   <div className="p-4 sm:p-7">
     <div className="text-center">
       <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
@@ -56,7 +85,7 @@ const page = () => {
         Or
       </div>
       {/* Form */}
-      <form>
+      <form onSubmit={signupForm.handleSubmit}>
         <div className="grid gap-y-4">
           {/* Form Group */}
           <div>
@@ -70,7 +99,10 @@ const page = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.email}
+                
+                
                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 required=""
                 aria-describedby="email-error"
@@ -88,9 +120,18 @@ const page = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              signupForm.touched.email && 
+
+              <p className="hidden text-xs text-red-600 mt-2" id="email-error">
+               
+               {signupForm.errors.email}
+
+              </p>
+
+
+            }
+           
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -105,7 +146,8 @@ const page = () => {
               <input
                 type="password"
                 id="password"
-                name="password"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.password}
                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 required=""
                 aria-describedby="password-error"
@@ -139,8 +181,9 @@ const page = () => {
             <div className="relative">
               <input
                 type="password"
-                id="confirm-password"
-                name="confirm-password"
+                id="confirmPassword"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.confirmPassword}
                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 required=""
                 aria-describedby="confirm-password-error"
@@ -202,6 +245,8 @@ const page = () => {
   </div>
 </div>
 
+</div>
+
 
 
 
@@ -209,4 +254,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;
