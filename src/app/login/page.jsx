@@ -3,6 +3,8 @@ import React from 'react';
 import { useFormik } from 'formik';
 
 import * as Yup from 'yup';
+import axios, { Axios } from 'axios';
+import { useRouter } from 'next/navigation';
  
  const SignupSchema = Yup.object().shape({
    name: Yup.string()
@@ -22,6 +24,7 @@ import * as Yup from 'yup';
  });
 
 const Login = () => {
+  const router=useRouter();
 
   const signupForm=useFormik({
 
@@ -32,8 +35,22 @@ const Login = () => {
       password: '',
       confirmPassword: ''
     },
-    onSubmit:(values)=>{
+    onSubmit:(values,{resetForm,setSubmitting})=>{
       console.log(values); // these values will be send to backend further.
+      axios.post('http://localhost:5000/product/add',values)
+      .then((response) => {
+        
+      }).catch((err) => {
+        console.log(err);
+        
+      });
+
+
+
+      // making a request on backend to save the data two are-- fetch and axios
+      //these help in sending the data to the backend valuse should be same
+     
+      
     },
 
     validationSchema:SignupSchema,

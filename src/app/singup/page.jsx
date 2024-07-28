@@ -1,13 +1,27 @@
 'use client'
+import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 const SignupSchema=Yup.object().shape({
   email:Yup.string().email('enter a valid email ').required('email is required'),
+
+
+  password:Yup.string().required('Required')
+
+  .matches(/[a-z]/,'must include lowercase ')
+  .matches(/[A-Z]/,'must include upper case ')
+  .matches(/[0-9]/,'must include numbers ')
+  .matches(/\w/,'must include special characters '),
+ 
+ 
 
 })
 
 const Page = () => {
+  const router=useRouter();
 
   const signupForm=useFormik({
 
@@ -16,9 +30,32 @@ const Page = () => {
       password: '',
       confirmPassword: '',
     },
-    onSubmit:(values)=>{
+    onSubmit:(values,{resetForm,setSubmitting})=>{
       console.log(values); // these values will be send to backend further.
+
+      axios.post('http://localhost:5000/user/add', values)
+      .then((resonse) => {
+        console.log(resonse.status);
+        resetForm();
+        toast.success('user added successfully')
+        router.push('/todo-list'); /// this router fn help to  redirect from one page to another
+
+
+        
+        
+      }).catch((err) => {
+        console.log(err);
+        if(err.response.data.code ===11000){
+          toast.error('Email already exists');
+        }
+        setSubmitting(false);
+        
+      });
+      
     },
+
+
+    validationSchema:SignupSchema,
 
 
   }
@@ -123,7 +160,7 @@ const Page = () => {
             {
               signupForm.touched.email && 
 
-              <p className="hidden text-xs text-red-600 mt-2" id="email-error">
+              <p className="text-xs text-red-600 mt-2" id="email-error">
                
                {signupForm.errors.email}
 
@@ -165,9 +202,15 @@ const Page = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-              8+ characters required
+            {
+              signupForm.touched.password && 
+            
+            <p className="text-xs text-red-600 mt-2" id="password-error">
+
+              {signupForm.errors.password}
+            
             </p>
+}
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -234,6 +277,7 @@ const Page = () => {
           {/* End Checkbox */}
           <button
             type="submit"
+            disabled={signupForm.isSubmitting}
             className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
           >
             Sign up
