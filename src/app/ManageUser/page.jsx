@@ -1,6 +1,7 @@
 'use client'
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const ManageUser = () => {
     const runonce=useRef(false);
@@ -9,11 +10,22 @@ const ManageUser = () => {
 
 
     const fetchUsers=  async()=>{
-        // request krne ka dusra tarika
+        // request krne ka dusra tarika  --- db se data display krvarhe h front end pe
         const res=await axios.get('http://localhost:5000/user/getall')
         console.table(res.data);
         setuserlist(res.data);
-
+    }
+    const deleteUser=(id)=>{
+      axios.delete('http://localhost:5000/user/deletebyid/'+id)
+      .then((response) => {
+        toast.success('user Delete successfully');
+        fetchUsers();
+        
+      }).catch((err) => {
+        console.log(err);
+        toast.error('not delete')
+        
+      });
     }
     useEffect(() => {
         if(!runonce.current){
@@ -77,14 +89,14 @@ const ManageUser = () => {
                       </span>
                     </div>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-start">
+                  <th  scope="col" className="px-6 py-3 text-start">
                     <div className="flex items-center gap-x-2">
                       <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
                         Created
                       </span>
                     </div>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-end" />
+                  <th colSpan={2} scope="col" className="px-6 py-3 text-end" />
                 </tr>
               </thead>
               <tbody className="dark:bg-neutral-800 divide-y divide-gray-200 dark:divide-neutral-700">
@@ -92,7 +104,7 @@ const ManageUser = () => {
                     userlist.map(user=>{
                         return(
 
-                            <tr>
+                            <tr key={user._id}>
                             <td className="size-px whitespace-nowrap">
                               <div className="ps-6 py-3">
                                 <label htmlFor="hs-at-with-checkboxes-1" className="flex">
@@ -162,7 +174,9 @@ const ManageUser = () => {
                             <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-3">
                                 <span className="text-sm text-gray-500 dark:text-neutral-500">
-                                  28 Dec, 12:12
+                                 {
+                                  new Date(user.createdAt).toDateString()
+                                 }
                                 </span>
                               </div>
                             </td>
@@ -170,10 +184,22 @@ const ManageUser = () => {
                               <div className="px-6 py-1.5">
                                 <a
                                   className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                  href="#"
+                                  href="/updateUser"
                                 >
                                   Edit
                                 </a>
+                              </div>
+                            </td>
+                            <td className="size-px whitespace-nowrap">
+                              <div className="px-6 py-1.5  text-white">
+                                <button
+                                onClick={()=>{deleteUser(user._id)}}
+                                >
+
+                                  
+                                  delete
+                                  
+                                </button>
                               </div>
                             </td>
                           

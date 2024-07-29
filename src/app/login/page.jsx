@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios, { Axios } from 'axios';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
  
  const SignupSchema = Yup.object().shape({
    name: Yup.string()
@@ -39,9 +40,18 @@ const Login = () => {
       console.log(values); // these values will be send to backend further.
       axios.post('http://localhost:5000/product/add',values)
       .then((response) => {
+        console.log(response.status);
+        resetForm();
+        toast.success('add succesfully')
+        router.push('/singup')
+
         
       }).catch((err) => {
         console.log(err);
+        if(err.response.data.code===11000){
+          toast.error('duplicate email')
+        }
+        setSubmitting(false)
         
       });
 
