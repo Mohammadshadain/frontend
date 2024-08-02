@@ -184,7 +184,7 @@ const ManageUser = () => {
                               <div className="px-6 py-1.5">
                                 <a
                                   className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                  href="/updateUser"
+                                  href={"/updateUser/"+user._id}
                                 >
                                   Edit
                                 </a>
